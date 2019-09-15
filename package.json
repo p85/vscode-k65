@@ -2,7 +2,7 @@
     "name": "vscode-k65",
     "publisher": "vscode-k65",
     "repository": {"url": "https://github.com/p85/vscode-k65"}, 
-    "displayName": ".k65",
+    "displayName": "K65 Language Support",
     "description": "K65 Language Support",
     "version": "1.0.0",
     "engines": {
