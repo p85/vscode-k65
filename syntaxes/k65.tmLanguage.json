@@ -1,0 +1,82 @@
+{
+  "scopeName": "source.k65",
+  "fileTypes": [".k65", ".K65"],
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "K65",
+  "patterns": [
+    { "include": "#expression" },
+    { "include": "#paren-expression"},
+    { "include": "#variable-definition"},
+    { "include": "#line-comment"},
+    { "include": "#block-comment"},
+    { "include": "#variable-definition-after-inline-var"},
+    { "include": "#keywords"},
+    { "include": "#function-naked-definition"},
+    { "include": "#operators"},
+    { "include": "#variable-end-semicolon"}
+  ],
+  "repository": {
+    "expression": {
+      "patterns": [
+        { "include": "#number" },
+        { "include": "#paren-expression" },
+        { "include": "#variable-defintion"},
+        { "include": "#line-comment"},
+        { "include": "#block-comment"},
+        { "include": "#variable-definition-after-inline-var"},
+        { "include": "#keywords"},
+        { "include": "#function-naked-definition"},
+        { "include": "#operators"},
+        { "include": "#variable-end-semicolon" }
+      ]
+    },
+    "number": {
+      "match": "(?<![^\\d\\W])(0x[0-9A-Fa-f]+|[0-9]+)",
+      "name": "variable"
+    },
+    "variable-definition": {
+      "match": "\\s*var\\s*[a-zA-Z_]{1}[a-zA-Z_0-9]*",
+      "name": "variable.parameter"
+    },
+    "variable-definition-after-inline-var": {
+      "match": "(?<=,{1})\\s*[a-zA-Z_]{1}[a-zA-Z_0-9]+( )*",
+      "name": "variable.parameter"
+    },
+    "variable-end-semicolon": {
+      "match": ";",
+      "name": "variable.parameter"
+    },
+    "line-comment": {
+      "match": "//.+",
+      "name": "comment.line"
+    },
+    "operators": {
+      "match": "(\\+|-|\\/ a|\\*|=|<|>|\\^|&|\\| a)+",
+      "name": "constant.language"
+    },
+    "keywords": {
+      "match": "\\s*(data|align|nocross|always|inline|include)",
+      "name": "constant.numeric"
+    },
+    "function-naked-definition": {
+      "match": "\\s*(func|naked)",
+      "name": "entity.name.function"
+    },
+    "paren-expression": {
+      "begin": "\\w*\\s*{",
+      "end": "}",
+      "beginCaptures": {
+        "0": { "name": "entity.other.attribute-name"}
+      },
+      "endCaptures": {
+        "0": { "name": "entity.other.attribute-name" }
+      },
+      "patterns": [{ "include": "#expression" }]
+    },
+    "block-comment": {
+      "begin": "/\\*.*",
+      "end": ".*\\*/",
+      "name": "comment.line"
+    }
+  }
+}

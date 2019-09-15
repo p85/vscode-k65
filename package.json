@@ -1,0 +1,25 @@
+{
+    "name": "k65",
+    "displayName": ".k65",
+    "description": "K65 Language Support",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.38.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "K65",
+            "aliases": ["K65", "k65"],
+            "extensions": [".k65"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "K65",
+            "scopeName": "source.k65",
+            "path": "./syntaxes/k65.tmLanguage.json"
+        }]
+    }
+}
