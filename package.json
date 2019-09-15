@@ -1,27 +1,52 @@
 {
-    "name": "vscode-k65",
-    "publisher": "vscode-k65",
-    "repository": {"url": "https://github.com/p85/vscode-k65"}, 
-    "displayName": "K65 Language Support",
-    "description": "K65 Language Support",
-    "version": "1.0.2",
-    "engines": {
-        "vscode": "^1.38.0"
-    },
-    "categories": [
-        "Programming Languages"
+  "name": "vscode-k65",
+  "publisher": "vscode-k65",
+  "repository": {
+    "url": "https://github.com/p85/vscode-k65"
+  },
+  "displayName": "K65 Language Support",
+  "description": "K65 Language Support",
+  "version": "1.0.3",
+  "engines": {
+    "vscode": "^1.38.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "K65",
+        "aliases": [
+          "K65",
+          "k65"
+        ],
+        "extensions": [
+          ".k65",
+          ".K65"
+        ],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "K65 File Listing",
+        "extensions": [
+          ".lst",
+          ".LST"
+        ],
+        "configuration": "./language-configuration.json"
+      }
     ],
-    "contributes": {
-        "languages": [{
-            "id": "K65",
-            "aliases": ["K65", "k65"],
-            "extensions": [".k65", ".K65"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "K65",
-            "scopeName": "source.k65",
-            "path": "./syntaxes/k65.tmLanguage.json"
-        }]
-    }
+    "grammars": [
+      {
+        "language": "K65",
+        "scopeName": "source.k65",
+        "path": "./syntaxes/k65.tmLanguage.json"
+      },
+      {
+        "language": "K65 File Listing",
+        "scopeName": "source.k65.lst",
+        "path": "./syntaxes/k65.lst.tmLanguage.json"
+      }
+    ]
+  }
 }

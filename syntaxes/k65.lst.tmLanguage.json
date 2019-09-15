@@ -1,0 +1,56 @@
+{
+  "scopeName": "source.k65.lst",
+  "fileTypes": [".lst", ".LST"],
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "K65 File Listing",
+  "patterns": [
+    { "include": "#system-symbol" },
+    { "include": "#k65-file" },
+    { "include": "#output-file" },
+    { "include": "#system-architecture" },
+    { "include": "#number" },
+    { "include": "#num-prefixes" },
+    { "include": "#line-comment" }
+  ],
+  "repository": {
+    "expression": {
+      "patterns": [
+        { "include": "#system-symbol" },
+        { "include": "#k65-file" },
+        { "include": "#output-file" },
+        { "include": "#system-architecture" },
+        { "include": "#number" },
+        { "include": "#num-prefixes" },
+        { "include": "#line-comment" }
+      ]
+    },
+    "system-symbol": {
+      "match": "(-system|-noOS|-lowAddr|-link)",
+      "name": "variable"
+    },
+    "k65-file": {
+      "match": "([a-zA-Z0-9_-]|\\\\)+\\.k65",
+      "name": "keyword"
+    },
+    "output-file": {
+      "match": "(-o|!{1}[a-zA-Z0-9_-]+)? \\s*([a-zA-Z0-9_-]|\\\\)+\\..+",
+      "name": "entity.name.function"
+    },
+    "system-architecture": {
+      "match": "(A2600|AtariXL|C64)",
+      "name": "constant.character"
+    },
+    "number": {
+      "match": "(?<![^\\d\\W])((0x|#\\$|#|\\$)[0-9A-Fa-f]+|[0-9]+)",
+      "name": "variable"
+    },
+    "num-prefixes": {
+      "match": "(\\.byte|#\\$|#|\\$)",
+      "name": "variable.parameter"
+    },
+    "line-comment": {
+      "match": "(//.+|;.+)",
+      "name": "comment.line"
+    }
+  }
+}
