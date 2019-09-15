@@ -51,11 +51,11 @@
       "name": "comment.line"
     },
     "operators": {
-      "match": "(\\+|-|\\/ a|\\*|=|<|>|\\^|&|\\| a)+",
+      "match": "(\\+|-|\\/ a|\\*|=|<|>|\\^|&|!|\\| a)+",
       "name": "constant.language"
     },
     "keywords": {
-      "match": "\\s*(data|align|nocross|always|inline|include)",
+      "match": "\\s*(data|align|nocross|always|inline|include|for|eval|\\.\\.)",
       "name": "constant.numeric"
     },
     "function-naked-definition": {
