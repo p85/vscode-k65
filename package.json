@@ -1,8 +1,10 @@
 {
-    "name": "k65",
+    "name": "vscode-k65",
+    "publisher": "pp85",
+    "repository": {"url": "https://github.com/p85/vscode-k65"}, 
     "displayName": ".k65",
     "description": "K65 Language Support",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "engines": {
         "vscode": "^1.38.0"
     },
@@ -13,7 +15,7 @@
         "languages": [{
             "id": "K65",
             "aliases": ["K65", "k65"],
-            "extensions": [".k65"],
+            "extensions": [".k65", ".K65"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
