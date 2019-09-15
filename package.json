@@ -1,6 +1,6 @@
 {
     "name": "vscode-k65",
-    "publisher": "pp85",
+    "publisher": "vscode-k65",
     "repository": {"url": "https://github.com/p85/vscode-k65"}, 
     "displayName": ".k65",
     "description": "K65 Language Support",
